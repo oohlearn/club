@@ -38,6 +38,9 @@ function Footer() {
             </Flex>
           </Col>
         </Row>
+        <Flex justify="center">
+          <p className="mb-0">© 2020 LOGO All Rights Reserved.</p>
+        </Flex>
       </div>
     </>
   );

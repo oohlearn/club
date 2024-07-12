@@ -7,6 +7,7 @@ import {
   CameraOutlined,
 } from "@ant-design/icons";
 import { Menu } from "antd";
+import { Link } from "react-router-dom";
 const items = [
   {
     key: "1",
@@ -17,6 +18,7 @@ const items = [
     key: "2",
     icon: <AppstoreOutlined />,
     label: "團體介紹",
+    link: "/intro",
   },
   {
     key: "3",
@@ -72,16 +74,18 @@ function Sidebar() {
     }
   };
   return (
-    <Menu
-      mode="inline"
-      defaultSelectedKeys={["231"]}
-      openKeys={stateOpenKeys}
-      onOpenChange={onOpenChange}
-      style={{
-        width: 256,
-      }}
-      items={items}
-    />
+    <Link to={items.link}>
+      <Menu
+        mode="inline"
+        defaultSelectedKeys={["231"]}
+        openKeys={stateOpenKeys}
+        onOpenChange={onOpenChange}
+        style={{
+          width: 256,
+        }}
+        items={items}
+      />
+    </Link>
   );
 }
 export default Sidebar;
