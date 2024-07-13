@@ -6,8 +6,10 @@ import {
   CalendarOutlined,
   CameraOutlined,
 } from "@ant-design/icons";
-import { Menu } from "antd";
+import { Menu, Layout, theme } from "antd";
 import { Link } from "react-router-dom";
+const { Header, Content, Sider } = Layout;
+
 const items = [
   {
     key: "1",
@@ -17,8 +19,7 @@ const items = [
   {
     key: "2",
     icon: <AppstoreOutlined />,
-    label: "團體介紹",
-    link: "/intro",
+    label: <Link to="/intro">團體介紹</Link>,
   },
   {
     key: "3",
@@ -73,19 +74,26 @@ function Sidebar() {
       setStateOpenKeys(openKeys);
     }
   };
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
   return (
-    <Link to={items.link}>
+    <Sider
+      style={{
+        background: colorBgContainer,
+      }}
+      width={200}
+    >
       <Menu
         mode="inline"
-        defaultSelectedKeys={["231"]}
-        openKeys={stateOpenKeys}
-        onOpenChange={onOpenChange}
+        defaultSelectedKeys={["1"]}
+        defaultOpenKeys={["sub1"]}
         style={{
-          width: 256,
+          height: "100%",
         }}
         items={items}
       />
-    </Link>
+    </Sider>
   );
 }
 export default Sidebar;

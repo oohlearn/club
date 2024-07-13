@@ -1,5 +1,7 @@
 import React from "react";
-import { Button, Card, Flex, Typography } from "antd";
+import { Button, Card, Flex, Typography, Layout } from "antd";
+const { Content } = Layout;
+
 const cardStyle = {
   width: "80%",
   justify: "center",
@@ -21,7 +23,7 @@ function IndexStory() {
           },
         }}
       >
-        <Flex justify="space-between">
+        <Flex justify="center">
           <img alt="poster" src="/images/home.jpg" width={125} height={200} style={imgStyle} />
           <Flex
             vertical

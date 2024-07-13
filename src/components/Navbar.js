@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import IndexStory from "./IndexStory";
+
 import { ShopOutlined, PhoneOutlined, StarOutlined } from "@ant-design/icons";
-import { Menu, Col, Row, Flex } from "antd";
+import { Menu, Layout } from "antd";
+const { Header } = Layout;
 
 function Navbar() {
+  const [current, setCurrent] = useState("mail");
+  const onClick = (e) => {
+    console.log("click ", e);
+    setCurrent(e.key);
+  };
   const items = [
     {
       label: "周邊商城",
@@ -20,23 +28,27 @@ function Navbar() {
       icon: <PhoneOutlined />,
     },
   ];
-  const box = {
-    width: "100%",
-    height: "120",
-    justify: "center",
-    align: "center",
-  };
+
   return (
-    <>
-      <div className="row ">
-        <div className="col-3">
-          <img src="/images/logo.jpg" alt="LOG" height={75} width={75} />
-        </div>
-        <div className="col-9">
-          <Menu mode="horizontal" items={items} />
-        </div>
-      </div>
-    </>
+    <Header
+      theme="light"
+      style={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <img src="/images/logo.jpg" alt="" width="80px" />
+      <Menu
+        mode="horizontal"
+        defaultSelectedKeys={["2"]}
+        items={items}
+        style={{
+          flex: 1,
+          minWidth: 0,
+          justifyContent: "flex-end",
+        }}
+      />
+    </Header>
   );
 }
 export default Navbar;
