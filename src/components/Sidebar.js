@@ -19,7 +19,11 @@ const items = [
   {
     key: "2",
     icon: <AppstoreOutlined />,
-    label: <Link to="/intro">團體介紹</Link>,
+    label: (
+      <Link to="/intro" style={{ textDecoration: "none" }}>
+        團體介紹
+      </Link>
+    ),
   },
   {
     key: "3",
@@ -86,8 +90,6 @@ function Sidebar() {
     >
       <Menu
         mode="inline"
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
         style={{
           height: "100%",
         }}
