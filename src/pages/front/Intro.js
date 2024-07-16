@@ -2,10 +2,19 @@ import ArticleCard from "../../components/ArticleCard";
 import MainArticle from "../../components/MainArticle";
 import { Col, Flex } from "antd";
 
+import styled from "styled-components";
+
+const StyleIntro = styled.div`
+  h2 {
+    justify-content: center;
+    display: flex;
+  }
+`;
+
 function IntroPage() {
   return (
-    <>
-      <div className="container ">
+    <StyleIntro>
+      <div className="container  ">
         <div className="row">
           <h2>團體介紹</h2>
         </div>
@@ -20,7 +29,7 @@ function IntroPage() {
           </div>
         </div>
       </div>
-    </>
+    </StyleIntro>
   );
 }
 

@@ -28,7 +28,11 @@ const items = [
   {
     key: "3",
     icon: <CalendarOutlined />,
-    label: "近期活動",
+    label: (
+      <Link to="/active" style={{ textDecoration: "none" }}>
+        近期活動
+      </Link>
+    ),
   },
   {
     key: "4",
