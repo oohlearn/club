@@ -1,6 +1,4 @@
-import ArticleCard from "../../components/ArticleCard";
-import MainArticle from "../../components/MainArticle";
-import { Col, Flex } from "antd";
+import Title from "../../components/Title";
 
 import styled from "styled-components";
 
@@ -14,10 +12,9 @@ const StyleIntro = styled.div`
 function IntroPage() {
   return (
     <StyleIntro>
+      <Title label="團體介紹" />
+
       <div className="container  ">
-        <div className="row">
-          <h2>團體介紹</h2>
-        </div>
         <div className="row">
           <div className="col-4">
             <img src="./images/團照.jpg" alt="" width={"300px"} />

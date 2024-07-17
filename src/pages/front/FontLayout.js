@@ -46,7 +46,6 @@ const FontLayout = () => {
               minHeight: 280,
             }}
           >
-            <h3>我是標題</h3>
             <Outlet />
           </Content>
         </Layout>
