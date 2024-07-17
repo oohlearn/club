@@ -1,4 +1,4 @@
-import Title from "../../components/Title";
+import TitleComponent from "../../components/TitleComponent";
 
 import styled from "styled-components";
 
@@ -12,7 +12,7 @@ const StyleIntro = styled.div`
 function IntroPage() {
   return (
     <StyleIntro>
-      <Title label="團體介紹" />
+      <TitleComponent label="團體介紹" />
 
       <div className="container  ">
         <div className="row">

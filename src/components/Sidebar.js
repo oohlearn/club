@@ -29,7 +29,7 @@ const items = [
     key: "3",
     icon: <CalendarOutlined />,
     label: (
-      <Link to="/active" style={{ textDecoration: "none" }}>
+      <Link to="/activities" style={{ textDecoration: "none" }}>
         近期活動
       </Link>
     ),

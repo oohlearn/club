@@ -6,7 +6,7 @@ const StyledRow = styled(Row)`
   text-align: center;
 `;
 
-function Title({ label }) {
+function TitleComponent({ label }) {
   return (
     <StyledRow>
       <Col>
@@ -18,4 +18,4 @@ function Title({ label }) {
   );
 }
 
-export default Title;
+export default TitleComponent;

@@ -1,26 +1,41 @@
 import { Col, Flex, Button, Divider, Space, Row } from "antd";
-import Activity from "../../components/Activity";
+import ActivityComponent from "../../components/ActivityComponent";
 import styled from "styled-components";
 import SearchBar from "../../components/SearchBar";
-import Title from "../../components/Title";
+import TitleComponent from "../../components/TitleComponent";
+import PaginationComponent from "../../components/Pagenation";
+import { Link } from "react-router-dom";
 
-const StyleActivities = styled.div``;
+const StylePagination = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+`;
 
+const StyleLink = styled(Link)`
+  text-decoration: none;
+`;
 function Activities() {
   return (
-    <StyleActivities>
-      <Title label="近期活動" />
+    <>
+      <TitleComponent label="近期活動" />
 
-      <SearchBar />
       <Space direction="vertical" size="large">
+        <SearchBar />
+
         <Row>
-          <Activity />
+          <StyleLink to={"/activity/1"}>
+            <ActivityComponent />
+          </StyleLink>
         </Row>
         <Row>
-          <Activity />
+          <ActivityComponent />
         </Row>
       </Space>
-    </StyleActivities>
+      <StylePagination>
+        <PaginationComponent />
+      </StylePagination>
+    </>
   );
 }
 

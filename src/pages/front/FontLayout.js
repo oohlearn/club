@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import Foot from "../../components/Foot";
 import { Outlet } from "react-router-dom";
-
 import React from "react";
 
 import { Breadcrumb, Layout, Menu, theme } from "antd";

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Row, Col, Space } from "antd";
+import React from "react";
 
 const ActivityContainer = styled.div`
   img {
@@ -10,27 +11,26 @@ const ActivityContainer = styled.div`
   }
 `;
 
-function Activity() {
+function ActivityComponent() {
   return (
     <ActivityContainer>
-      <Row gutter={50}>
-        <Col>
+      <Row gutter={30}>
+        <Col span={8}>
           <img src="./images/poster.jpg" alt="" />
         </Col>
-        <Col className="info">
+        <Col className="info" span={16}>
           <h3>Title</h3>
           <h5>2024.6.30 - 國家音樂廳</h5>
           <h5 style={{ color: "orange" }}>票價：200元/300元</h5>
-          <span>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta nemo consequuntur
-              facere eaque laudantium? Numquam, sdam.
-            </p>
-          </span>
+
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta nemo consequuntur
+            facere eaque laudantium? Numquam, sdam.
+          </p>
         </Col>
       </Row>
     </ActivityContainer>
   );
 }
 
-export default Activity;
+export default ActivityComponent;

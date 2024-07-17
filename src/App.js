@@ -3,6 +3,7 @@ import Home from "./pages/front/Home";
 import FrontLayout from "./pages/front/FontLayout";
 import IntroPage from "./pages/front/Intro";
 import Activities from "./pages/front/Activities";
+import ActivityPage from "./components/ActivityPage";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Route path="/" element={<FrontLayout />}>
           <Route path="home" element={<Home />}></Route>
           <Route path="intro" element={<IntroPage />}></Route>
-          <Route path="active" element={<Activities />}></Route>
+          <Route path="activities" element={<Activities />}></Route>
+          <Route path="activity/:activityId" element={<ActivityPage />}></Route>
         </Route>
       </Routes>
     </div>
