@@ -1,9 +1,21 @@
-import { Col, Row, Flex, Space, Divider, Table, Button, Input, Form, Select } from "antd";
+import { Col, Row, Flex, Space, Divider, Table, Button, Input, Form, Select, Checkbox } from "antd";
 import { QuestionCircleTwoTone, MinusCircleTwoTone } from "@ant-design/icons";
 
 import styled from "styled-components";
 import TitleComponent from "./TitleComponent";
 import React, { useContext, useEffect, useRef, useState } from "react";
+
+const onChange = (e) => {
+  console.log(`checked = ${e.target.checked}`);
+};
+const PolicyCheck = () => (
+  <Checkbox onChange={onChange}>
+    我已經閱讀並同意
+    <a href="">服務條款與隱私權政策</a>
+  </Checkbox>
+);
+
+// TODO票券表格
 const selectOptions = Array.from({ length: 10 }, (_, i) => ({ value: i + 1, label: i + 1 }));
 
 const TicketTable = ({ dataSource, handleTicketChange, resetTicketCounts }) => {
@@ -205,7 +217,7 @@ function ActivityPage() {
           </ul>
         </Col>
       </Row>
-      <Divider>
+      <Divider orientation="left" orientationMargin={0}>
         <h5 style={{ fontWeight: "bold" }}>購票說明</h5>
       </Divider>
       <Row>
@@ -217,6 +229,9 @@ function ActivityPage() {
           </li>
           <li>單次購票僅能選擇單一票種，若須購買不同票種，請再次下單購買。</li>
         </ol>
+      </Row>
+      <Row justify={"center"}>
+        <PolicyCheck />
       </Row>
       <Row justify={"center"}>
         <TicketTable
