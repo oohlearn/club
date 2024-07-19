@@ -1,5 +1,5 @@
 import TitleComponent from "../../components/TitleComponent";
-import { Col, Divider, Row, Table, List, Space } from "antd";
+import { Col, Divider, Row, Table, List, Space, Flex } from "antd";
 import React from "react";
 
 import styled from "styled-components";
@@ -28,6 +28,7 @@ const conductorData = [
     title: "Con2",
     description: "hi",
     content: "content",
+    url: "https://images.unsplash.com/photo-1602694251352-c8040a589547?q=80&w=2248&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -87,7 +88,7 @@ function IntroPage() {
       <br />
       <Row gutter={20}>
         <Col span={6}>
-          <img src="./images/logo.jpg" alt="" width={"60%"} height={"auto"} />
+          <img src="./images/logo.jpg" alt="" width={"80%"} height={"auto"} />
         </Col>
         <Col span={18}>
           <p>
@@ -101,16 +102,9 @@ function IntroPage() {
       <Divider>
         <h5>指揮老師</h5>
       </Divider>
-
       <Row>
         <ConductorList />
       </Row>
-      <img
-        src="https://images.unsplash.com/photo-1579702493660-c0ec1bd69131?q=80&w=2485&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt=""
-        width={"60%"}
-        height={"auto"}
-      />
 
       <Divider>
         <h5>歷年重要演出、比賽經歷</h5>
