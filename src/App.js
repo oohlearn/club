@@ -3,7 +3,7 @@ import Home from "./pages/front/Home";
 import FrontLayout from "./pages/front/FontLayout";
 import IntroPage from "./pages/front/Intro";
 import Activities from "./pages/front/Activities";
-import ActivityPage from "./components/ActivityPage";
+import ActivityPage from "./components/Activities/ActivityPage";
 
 function App() {
   return (

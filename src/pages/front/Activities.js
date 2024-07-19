@@ -1,5 +1,5 @@
 import { Col, Flex, Button, Divider, Space, Row } from "antd";
-import ActivityComponent from "../../components/ActivityComponent";
+import ActivityComponent from "../../components/Activities/ActivityComponent";
 import styled from "styled-components";
 import SearchBar from "../../components/SearchBar";
 import TitleComponent from "../../components/TitleComponent";

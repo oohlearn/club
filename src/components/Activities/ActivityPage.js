@@ -1,10 +1,10 @@
-import { Col, Row, Flex, Space, Divider, Table, Button, Input, Form, Select, Checkbox } from "antd";
-import { QuestionCircleTwoTone, MinusCircleTwoTone } from "@ant-design/icons";
+import { Col, Row, Space, Divider, Table, Button, Select, Checkbox } from "antd";
+import { QuestionCircleTwoTone } from "@ant-design/icons";
 
 import styled from "styled-components";
-import TitleComponent from "./TitleComponent";
+import TitleComponent from "../TitleComponent";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import PolicyModal from "./PolicyModal";
+import PolicyModal from "../PolicyModal";
 
 const onChange = (e) => {
   console.log(`checked = ${e.target.checked}`);
