@@ -35,6 +35,7 @@ function Navbar() {
       style={{
         display: "flex",
         alignItems: "center",
+        backgroundColor: "#f5f5f5",
       }}
     >
       <img src="/images/logo.jpg" alt="" width="80px" />

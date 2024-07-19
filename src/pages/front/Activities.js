@@ -24,7 +24,7 @@ function Activities() {
         <SearchBar />
 
         <Row>
-          <StyleLink to={"/activity/1"}>
+          <StyleLink to={"/activities/1"}>
             <ActivityComponent />
           </StyleLink>
         </Row>

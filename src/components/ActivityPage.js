@@ -4,16 +4,33 @@ import { QuestionCircleTwoTone, MinusCircleTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
 import TitleComponent from "./TitleComponent";
 import React, { useContext, useEffect, useRef, useState } from "react";
+import PolicyModal from "./PolicyModal";
 
 const onChange = (e) => {
   console.log(`checked = ${e.target.checked}`);
 };
-const PolicyCheck = () => (
-  <Checkbox onChange={onChange}>
-    我已經閱讀並同意
-    <a href="">服務條款與隱私權政策</a>
-  </Checkbox>
-);
+function PolicyCheck() {
+  const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
+  const showLoading = () => {
+    setOpen(true);
+    setLoading(true);
+
+    // Simple loading mock. You should add cleanup logic in real world.
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  };
+  return (
+    <Checkbox onChange={onChange}>
+      我已經閱讀並同意
+      <Button type="link" onClick={showLoading}>
+        服務條款與隱私權政策
+      </Button>
+      <PolicyModal loading={loading} setOpen={setOpen} open={open}></PolicyModal>
+    </Checkbox>
+  );
+}
 
 // TODO票券表格
 const selectOptions = Array.from({ length: 10 }, (_, i) => ({ value: i + 1, label: i + 1 }));
@@ -98,7 +115,6 @@ const TicketTable = ({ dataSource, handleTicketChange, resetTicketCounts }) => {
     />
   );
 };
-
 function ActivityPage() {
   const [dataSource, setDataSource] = useState([
     {

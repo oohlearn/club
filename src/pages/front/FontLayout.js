@@ -2,17 +2,33 @@ import IndexStory from "../../components/IndexStory";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import Foot from "../../components/Foot";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import React from "react";
 
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Breadcrumb, Layout, theme } from "antd";
 import FloatBtn from "../../components/FloatBtn";
-const { Header, Content, Sider } = Layout;
+const { Content } = Layout;
 
 const FontLayout = () => {
+  const location = useLocation();
+  const pathSnippets = location.pathname.split("/").filter((i) => i);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+  const breadcrumbItems = [
+    <Breadcrumb.Item key="home">
+      <Link to={"Home"}>Home</Link>
+    </Breadcrumb.Item>,
+    ...pathSnippets.map((snippet, index) => {
+      const url = `${pathSnippets.slice(0, index + 1).join("-")}`;
+      const upperUrl = snippet.charAt(0).toUpperCase() + snippet.slice(1);
+      return (
+        <Breadcrumb.Item key={url}>
+          <Link to={url}>{upperUrl}</Link>
+        </Breadcrumb.Item>
+      );
+    }),
+  ];
   return (
     <Layout>
       <Navbar />
@@ -27,9 +43,7 @@ const FontLayout = () => {
             margin: "16px 0",
           }}
         >
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
+          {breadcrumbItems}
         </Breadcrumb>
         <Layout
           style={{
