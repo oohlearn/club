@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const conductorData = [
   {
     index: 1,
-    name: "指揮1",
+    name: "小佳佳",
     description:
       "Ant Design, a design language for background applications, is refined by Ant UED Team.",
     content:
