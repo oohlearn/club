@@ -38,7 +38,9 @@ function Navbar() {
         backgroundColor: "#f5f5f5",
       }}
     >
-      <img src="/images/logo.jpg" alt="" width="80px" />
+      <a href={"/"}>
+        <img src="/images/logo.jpg" alt="" width="80px" />
+      </a>
       <Menu
         mode="horizontal"
         defaultSelectedKeys={["2"]}

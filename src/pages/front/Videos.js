@@ -1,10 +1,9 @@
 import { Space, Row } from "antd";
-import ActivityComponent from "../../components/Activities/ActivityComponent";
 import styled from "styled-components";
 import SearchBar from "../../components/SearchBar";
 import TitleComponent from "../../components/TitleComponent";
 import PaginationComponent from "../../components/Pagenation";
-import { Link } from "react-router-dom";
+import VideoComponent from "../../components/Videos/VideoComponent";
 
 const StylePagination = styled.div`
   display: flex;
@@ -12,15 +11,15 @@ const StylePagination = styled.div`
   margin-top: 35px;
 `;
 
-function Activities() {
+function Videos() {
   return (
     <>
-      <TitleComponent label="近期活動" />
+      <TitleComponent label="精華影片" />
 
       <Space direction="vertical" size="large">
         <SearchBar />
         <Row>
-          <ActivityComponent />
+          <VideoComponent />
         </Row>
       </Space>
       <StylePagination>
@@ -30,4 +29,4 @@ function Activities() {
   );
 }
 
-export default Activities;
+export default Videos;

@@ -29,7 +29,7 @@ const SearchBar = () => {
       <Space direction="vertical">
         <SearchContainer>
           <Search placeholder="活動標題、關鍵字" onSearch={onSearch} enterButton width={"200px"} />
-          <span>依活動時間搜尋：</span>
+          <span>依時間搜尋：</span>
           <OpenCalendar />
         </SearchContainer>
       </Space>

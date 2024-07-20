@@ -17,7 +17,7 @@ const FontLayout = () => {
   } = theme.useToken();
   const breadcrumbItems = [
     <Breadcrumb.Item key="home">
-      <Link to={"Home"}>Home</Link>
+      <Link to="">首頁</Link>
     </Breadcrumb.Item>,
     ...pathSnippets.map((snippet, index) => {
       const url = `${pathSnippets.slice(0, index + 1).join("-")}`;

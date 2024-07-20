@@ -4,14 +4,16 @@ import { QuestionCircleTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
 import TitleComponent from "../TitleComponent";
 import React, { useContext, useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import PolicyModal from "../PolicyModal";
+import { activitiesData } from "../../textFile";
 
 const onChange = (e) => {
   console.log(`checked = ${e.target.checked}`);
 };
 function PolicyCheck() {
-  const [open, setOpen] = React.useState(false);
-  const [loading, setLoading] = React.useState(true);
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
   const showLoading = () => {
     setOpen(true);
     setLoading(true);
@@ -115,34 +117,69 @@ const TicketTable = ({ dataSource, handleTicketChange, resetTicketCounts }) => {
     />
   );
 };
+
+const programData = [
+  {
+    title: "花傘與蘭花",
+    composer: "朱嘯林",
+  },
+  {
+    title: "德音",
+    composer: "李博禪",
+  },
+  {
+    title: "那些年",
+    composer: "邱士峰",
+  },
+  {
+    title: "彩龍船",
+    composer: "瞿春泉",
+  },
+  {
+    title: "抒情變奏曲III",
+    composer: "劉長遠",
+  },
+  {
+    title: "成德國小校歌",
+    composer: "林明學",
+  },
+  {
+    title: "《走過成德》十週年紀錄片",
+    composer: "",
+  },
+];
+// TODO曲目表格
+const ProgramTable = () => {
+  const columns = [
+    {
+      title: "",
+      dataIndex: "title",
+      key: "title",
+      render: (text) => <a>{text}</a>,
+    },
+    {
+      title: "",
+      dataIndex: "composer",
+      key: "composer",
+    },
+  ];
+  return (
+    <Table
+      columns={columns}
+      dataSource={programData}
+      pagination={{ hideOnSinglePage: "true" }}
+      size="small"
+      showHeader={false}
+      bordered={true}
+    />
+  );
+};
 function ActivityPage() {
-  const [dataSource, setDataSource] = useState([
-    {
-      key: "basic",
-      category: "普通票",
-      price: "100元",
-      description: "",
-    },
-    {
-      key: "rock",
-      category: "搖滾區",
-      price: "500元",
-      description: "",
-    },
-    {
-      key: "vip",
-      category: "VIP",
-      price: "0元",
-      description: "請出示貴賓邀請卡，可免費索取節目單",
-    },
-    {
-      key: "elder",
-      category: "敬老票",
-      discount: "8折優惠",
-      price: "80元",
-      description: "請攜帶相關證明文件",
-    },
-  ]);
+  const location = useLocation();
+  const pathSnippets = location.pathname.split("/").filter((i) => i);
+  const activityIndex = pathSnippets[1] - 1;
+  const activityData = activitiesData[activityIndex];
+  const [dataSource, setDataSource] = useState(activityData.ticket);
 
   const handleTicketChange = (key, value) => {
     setDataSource((prevData) => {
@@ -181,9 +218,9 @@ function ActivityPage() {
           />
         </Col>
         <Col span={18}>
-          <h6>時間 | 2024/7/1 1400-1700</h6>
-          <h6>地點 | 蘆洲功學社音樂廳</h6>
-          <h6>票價 | 100/200/500</h6>
+          <h6>時間 | {activityData.date}</h6>
+          <h6>地點 | {activityData.place}</h6>
+          <h6>票價 | {activityData.price}</h6>
           <Divider orientation="left" orientationMargin={0}>
             <strong>節目介紹</strong>
           </Divider>
@@ -195,42 +232,9 @@ function ActivityPage() {
           <Divider orientation="left" orientationMargin={0}>
             <strong>演出曲目</strong>
           </Divider>
-          <ul style={{ listStyleType: "none", fontSize: "medium" }}>
-            <li>
-              花傘與蘭花
-              <Divider type="vertical" /> 朱嘯林
-            </li>
-            <li>
-              德音
-              <Divider type="vertical" />
-              李博禪{" "}
-            </li>
-            <li>
-              那些年
-              <Divider type="vertical" />
-              邱士峰
-            </li>
-            <li>
-              彩龍船
-              <Divider type="vertical" />
-              瞿春泉
-            </li>
-            <li>
-              抒情變奏曲III
-              <Divider type="vertical" />
-              劉長遠
-            </li>
-            <li>
-              成德國小校歌
-              <Divider type="vertical" />
-              林明學
-            </li>
-            <li>
-              《走過成德》
-              <Divider type="vertical" />
-              十週年紀錄片
-            </li>
-          </ul>
+          <Col span={12}>
+            <ProgramTable />
+          </Col>
         </Col>
       </Row>
       <Divider orientation="left" orientationMargin={0}>
