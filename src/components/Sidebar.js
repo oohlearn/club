@@ -37,7 +37,11 @@ const items = [
   {
     key: "4",
     icon: <CameraOutlined />,
-    label: "歷史紀錄",
+    label: (
+      <Link to="/albums" style={{ textDecoration: "none" }}>
+        活動紀錄
+      </Link>
+    ),
   },
   {
     key: "5",

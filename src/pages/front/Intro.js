@@ -60,7 +60,7 @@ function IntroPage() {
     <StyleIntro>
       <TitleComponent label="成德國小國樂團" />
       <Row>
-        <IntroMenu />
+        <IntroMenu mode="horizontal" />
       </Row>
       <br />
       <Outlet />

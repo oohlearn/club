@@ -39,6 +39,7 @@ function ActivityComponent() {
                 </p>
               </Col>
             </Row>
+            <br />
           </StyleLink>
         );
       })}

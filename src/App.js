@@ -3,12 +3,14 @@ import Home from "./pages/front/Home";
 import FrontLayout from "./pages/front/FontLayout";
 import IntroPage from "./pages/front/Intro";
 import Activities from "./pages/front/Activities";
-import ActivityPage from "./components/Activities/ActivityPage";
+import ActivityTicket from "./components/Activities/ActivityTicket";
 import IntroHome from "./components/Intro/IntroHome";
 import ExperiencesPage from "./components/Intro/Experiences";
 import Conductors from "./components/Intro/Conductors";
 import Teachers from "./components/Intro/Teachers";
 import Videos from "./pages/front/Videos";
+import Albums from "./pages/front/Albums";
+import AlbumDetail from "./components/Albums/AlbumDetail";
 
 function App() {
   return (
@@ -23,8 +25,10 @@ function App() {
             <Route path="teachers" element={<Teachers />}></Route>
           </Route>
           <Route path="activities" element={<Activities />}></Route>
-          <Route path="activities/:activityId" element={<ActivityPage />}></Route>
+          <Route path="activities/:activityId" element={<ActivityTicket />}></Route>
           <Route path="videos" element={<Videos />}></Route>
+          <Route path="albums" element={<Albums />}></Route>
+          <Route path="albums/:albumId" element={<AlbumDetail />}></Route>
         </Route>
       </Routes>
     </div>

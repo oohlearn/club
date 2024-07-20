@@ -118,38 +118,8 @@ const TicketTable = ({ dataSource, handleTicketChange, resetTicketCounts }) => {
   );
 };
 
-const programData = [
-  {
-    title: "花傘與蘭花",
-    composer: "朱嘯林",
-  },
-  {
-    title: "德音",
-    composer: "李博禪",
-  },
-  {
-    title: "那些年",
-    composer: "邱士峰",
-  },
-  {
-    title: "彩龍船",
-    composer: "瞿春泉",
-  },
-  {
-    title: "抒情變奏曲III",
-    composer: "劉長遠",
-  },
-  {
-    title: "成德國小校歌",
-    composer: "林明學",
-  },
-  {
-    title: "《走過成德》十週年紀錄片",
-    composer: "",
-  },
-];
 // TODO曲目表格
-const ProgramTable = () => {
+const ProgramTable = ({ programData }) => {
   const columns = [
     {
       title: "",
@@ -174,7 +144,7 @@ const ProgramTable = () => {
     />
   );
 };
-function ActivityPage() {
+function ActivityTicket() {
   const location = useLocation();
   const pathSnippets = location.pathname.split("/").filter((i) => i);
   const activityIndex = pathSnippets[1] - 1;
@@ -203,17 +173,18 @@ function ActivityPage() {
       }))
     );
   };
+
   return (
     <>
       <Row style={{ textAlign: "center", justifyContent: "center" }}>
-        <TitleComponent label="| 2024年度公演 |" />
+        <TitleComponent label={`| ${activityData.title} |`} />
       </Row>
       <br />
       <Row gutter={20}>
         <Col span={6}>
           <img
-            style={{ width: "100%", height: "auto" }}
-            src="https://plus.unsplash.com/premium_photo-1681593282801-5e6ae37eac2a?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            style={{ width: "100%", height: "auto", objectFit: "cover" }}
+            src={activityData.poster}
             alt=""
           />
         </Col>
@@ -233,7 +204,7 @@ function ActivityPage() {
             <strong>演出曲目</strong>
           </Divider>
           <Col span={12}>
-            <ProgramTable />
+            <ProgramTable programData={activityData.program} />
           </Col>
         </Col>
       </Row>
@@ -263,4 +234,4 @@ function ActivityPage() {
     </>
   );
 }
-export default ActivityPage;
+export default ActivityTicket;

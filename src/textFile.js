@@ -2,18 +2,20 @@ import { Link } from "react-router-dom";
 
 export const conductorData = [
   {
-    title: "Con1",
+    index: 1,
+    name: "指揮1",
     description:
       "Ant Design, a design language for background applications, is refined by Ant UED Team.",
     content:
       "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-    url: "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
+    img: "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
   },
   {
-    title: "Con2",
+    index: 2,
+    name: "Con2",
     description: "hi",
     content: "content",
-    url: "https://images.unsplash.com/photo-1602694251352-c8040a589547?q=80&w=2248&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "https://images.unsplash.com/photo-1602694251352-c8040a589547?q=80&w=2248&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -22,6 +24,7 @@ export const teacherData = [
     title: "笛子／蔡宜靜",
     description:
       "畢業於臺北市立大學音樂系。主修笛。為竹音文化事業有限公司、臺北市演藝團隊-竹音音樂·Ching Music創辦人，並任教於臺北市成德國小、建中山國樂社笛子分部老師，致力國樂教學、推廣與演奏。現隨劉穎蓉老師學習尺八，追求更寬廣的音樂內涵與視野。",
+    img: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?q=80&w=2273&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "笙／莊晴涵",
@@ -66,6 +69,7 @@ export const indexStoryData = [
     date: "時間 | 6月30日（日）",
     place: "地點 | 台北生技園區多功能廳",
     img: "./images/home2.png",
+    url: "",
   },
   {
     index: 2,
@@ -118,7 +122,7 @@ export const introMenu = [
 export const videosData = [
   {
     title: "鑽石之眼 - 金牛座",
-    img: "",
+    img: "https://images.unsplash.com/photo-1531660963020-52ba84d92593?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvbmNlcnQlMjBoYWxsfGVufDB8fDB8fHww",
     performer: "王曉明",
     date: "111年4月5日",
     place: "蘆洲功學社音樂廳",
@@ -126,7 +130,7 @@ export const videosData = [
   },
   {
     title: "台北狂想",
-    img: "",
+    img: "https://images.unsplash.com/photo-1458639817867-2c9d4c5dcad4?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     performer: "國樂團",
     date: "112年5月3日",
     place: "音樂廳",
@@ -138,8 +142,10 @@ export const activitiesData = [
   {
     index: "1",
     title: "2024年度巡迴公演-台北場",
-    poster: "./images/poster.jpg",
-    date: "2024.6.30 (日)",
+    poster:
+      "https://images.unsplash.com/photo-1485278537138-4e8911a13c02?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+    date: "2024.7.28 (日)",
     place: "台北生技園區多功能廳",
     price: "200/300/500",
     description: "",
@@ -207,6 +213,15 @@ export const activitiesData = [
     poster:
       "https://images.unsplash.com/photo-1485278537138-4e8911a13c02?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     date: "2024.8.3 (六)",
+    place: "衛武營國家藝術文化中心",
+    price: "500",
+    description: "",
+  },
+  {
+    index: "3",
+    title: "十周年團慶音樂會",
+    poster: "/images/poster.jpg",
+    date: "2024.6.30 (日)",
     place: "衛武營國家藝術文化中心",
     price: "500",
     description: "",
