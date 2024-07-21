@@ -59,7 +59,7 @@ function IntroPage() {
   return (
     <StyleIntro>
       <TitleComponent label="成德國小國樂團" />
-      <Row>
+      <Row justify={"center"}>
         <IntroMenu mode="horizontal" />
       </Row>
       <br />

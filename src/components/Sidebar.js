@@ -14,7 +14,11 @@ const items = [
   {
     key: "1",
     icon: <BellOutlined />,
-    label: "最新消息",
+    label: (
+      <Link to="/news" style={{ textDecoration: "none" }}>
+        最新消息
+      </Link>
+    ),
   },
   {
     key: "2",

@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, List, Skeleton, Col, Flex, Row } from "antd";
 
 function MainArticle() {
   return (
@@ -14,6 +15,9 @@ function MainArticle() {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis enim eius nam,
               laboriosam eaque corporis vitae ea natus.
             </p>
+            <Row align={"bottom"}>
+              <Button type="primary">購票去!</Button>
+            </Row>
           </div>
         </div>
       </div>

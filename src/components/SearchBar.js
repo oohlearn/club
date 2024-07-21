@@ -33,6 +33,7 @@ const SearchBar = () => {
           <OpenCalendar />
         </SearchContainer>
       </Space>
+      <br />
     </StyleSearch>
   );
 };

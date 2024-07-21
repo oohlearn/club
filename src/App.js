@@ -11,6 +11,8 @@ import Teachers from "./components/Intro/Teachers";
 import Videos from "./pages/front/Videos";
 import Albums from "./pages/front/Albums";
 import AlbumDetail from "./components/Albums/AlbumDetail";
+import News from "./pages/front/News";
+import NewsDetail from "./components/News/NewsDetail";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="videos" element={<Videos />}></Route>
           <Route path="albums" element={<Albums />}></Route>
           <Route path="albums/:albumId" element={<AlbumDetail />}></Route>
+          <Route path="news" element={<News />}></Route>
+          <Route path="news/:newsId" element={<NewsDetail />}></Route>
         </Route>
       </Routes>
     </div>
