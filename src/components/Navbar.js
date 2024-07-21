@@ -39,7 +39,7 @@ function Navbar() {
       }}
     >
       <a href={"/"}>
-        <img src="/images/logo.jpg" alt="" width="80px" />
+        <img src="/images/logo.jpg" alt="" width="70px" />
       </a>
       <Menu
         mode="horizontal"

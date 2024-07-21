@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Space, Button } from "antd";
+import { Input, Space, Button, Col } from "antd";
 import styled from "styled-components";
 import OpenCalendar from "./Calendar";
 
@@ -28,9 +28,13 @@ const SearchBar = () => {
     <StyleSearch>
       <Space direction="vertical">
         <SearchContainer>
-          <Search placeholder="活動標題、關鍵字" onSearch={onSearch} enterButton width={"200px"} />
-          <span>依時間搜尋：</span>
-          <OpenCalendar />
+          <Col span={12}>
+            <Search placeholder="活動標題、關鍵字" onSearch={onSearch} enterButton width={"80%"} />
+          </Col>
+          <Col span={12}>
+            <span>依時間搜尋：</span>
+            <OpenCalendar />
+          </Col>
         </SearchContainer>
       </Space>
       <br />

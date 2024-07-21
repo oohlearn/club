@@ -14,6 +14,15 @@ const ActivityContainer = styled.div`
 `;
 const StyleLink = styled(Link)`
   text-decoration: none;
+  h3 {
+    color: blue;
+  }
+  h5 {
+    color: black;
+  }
+  p {
+    color: gray;
+  }
 `;
 
 function ActivityComponent() {

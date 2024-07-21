@@ -1,12 +1,13 @@
 import MainArticle from "../../components/MainArticle";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-import { Button, List, Skeleton, Col, Flex, Row } from "antd";
+import { Button, List, Skeleton, Col, Flex, Row, Divider } from "antd";
 import { Link } from "react-router-dom";
 import { newsData } from "../../textFile";
 
 const StyleLink = styled(Link)`
   text-decoration: none;
+  font-size: large;
 `;
 
 function Home() {
@@ -77,7 +78,7 @@ function Home() {
         renderItem={(news) => (
           <Row>
             <Skeleton title={false} loading={news.loading} active>
-              <Col span={4}>
+              <Col span={4} style={{ alignItems: "center", display: "flex" }}>
                 <List.Item>{news.date}</List.Item>
               </Col>
               <Col span={16}>
@@ -92,7 +93,7 @@ function Home() {
                   />
                 </List.Item>
               </Col>
-              <Col span={4}>
+              <Col offset={1} span={3} style={{ display: "flex", alignItems: "end" }}>
                 <List.Item>
                   <StyleLink to={`/news/${news.index}`}>more...</StyleLink>
                 </List.Item>

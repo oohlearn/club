@@ -6,7 +6,7 @@ import { indexStoryData } from "../textFile";
 const CarouselStyle = styled.div`
   .text {
     /* height: 200px; */
-    color: aqua;
+    color: navy;
     /* line-height: 130px; */
   }
   h5 {

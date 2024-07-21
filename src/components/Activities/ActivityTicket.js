@@ -1,7 +1,6 @@
 import { Col, Row, Space, Divider, Table, Button, Select, Checkbox } from "antd";
 import { QuestionCircleTwoTone } from "@ant-design/icons";
 
-import styled from "styled-components";
 import TitleComponent from "../TitleComponent";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";

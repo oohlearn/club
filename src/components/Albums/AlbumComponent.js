@@ -31,7 +31,7 @@ function AlbumsComponent() {
                     height: "auto",
                     padding: 0,
                   }}
-                  cover={<img alt="example" src={album.img} />}
+                  cover={<img alt="example" src={album.indexImg} />}
                 >
                   <Meta
                     title={album.title}
