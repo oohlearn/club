@@ -35,7 +35,7 @@ const FontLayout = () => {
       <IndexStory />
       <Content
         style={{
-          padding: "0 48px",
+          padding: "0 36px",
         }}
       >
         <Breadcrumb

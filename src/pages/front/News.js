@@ -10,7 +10,6 @@ function News() {
       <TitleComponent label={"最新消息"} />
       <Space direction="vertical" size="large">
         <SearchBar />
-
         <NewsComponent />
       </Space>
     </>

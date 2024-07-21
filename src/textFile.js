@@ -233,36 +233,95 @@ export const albumsData = [
     index: 1,
     title: "2024春遊",
     date: "2024.2.5",
-    img: "https://plus.unsplash.com/premium_photo-1664361480872-6416aab14696?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHJhdmVsfGVufDB8fDB8fHww",
+    indexImg:
+      "https://plus.unsplash.com/premium_photo-1664361480872-6416aab14696?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHJhdmVsfGVufDB8fDB8fHww",
   },
   {
     index: 2,
     title: "113學年度上學期成果發表",
     date: "2024.1.5",
-    img: "https://images.unsplash.com/photo-1499442711659-a9566695faed?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJhY3RpY2V8ZW58MHx8MHx8fDA%3D",
+    indexImg:
+      "https://images.unsplash.com/photo-1499442711659-a9566695faed?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJhY3RpY2V8ZW58MHx8MHx8fDA%3D",
+    images: [],
   },
   {
     index: 3,
     title: "2023慶功宴",
     date: "2023.7.2",
-    img: "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZvb2R8ZW58MHx8MHx8fDA%3D",
+    indexImg:
+      "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZvb2R8ZW58MHx8MHx8fDA%3D",
+    images: [],
   },
   {
     index: 4,
     title: "2023夏遊",
     date: "2023.8.30",
-    img: "https://plus.unsplash.com/premium_photo-1664361480872-6416aab14696?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHJhdmVsfGVufDB8fDB8fHww",
+    indexImg:
+      "https://plus.unsplash.com/premium_photo-1664361480872-6416aab14696?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHJhdmVsfGVufDB8fDB8fHww",
+    images: [],
   },
   {
     index: 5,
     title: "112學年度下學期成果發表",
     date: "2023.6.25",
-    img: "https://images.unsplash.com/photo-1499442711659-a9566695faed?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJhY3RpY2V8ZW58MHx8MHx8fDA%3D",
+    indexImg:
+      "https://images.unsplash.com/photo-1499442711659-a9566695faed?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJhY3RpY2V8ZW58MHx8MHx8fDA%3D",
+    images: [],
   },
   {
     index: 6,
     title: "2023慶功宴",
     date: "2023.7.2",
-    img: "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZvb2R8ZW58MHx8MHx8fDA%3D",
+    indexImg:
+      "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZvb2R8ZW58MHx8MHx8fDA%3D",
+    images: [],
+  },
+];
+
+export const newsData = [
+  {
+    index: 1,
+    title: "News1",
+    content:
+      "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    date: "2024.2.1",
+    category: "ticket",
+    img: "",
+  },
+  {
+    index: 2,
+    title: "News2",
+    content:
+      "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    date: "2024.3.1",
+    category: "announcement",
+    img: "",
+  },
+  {
+    index: 3,
+    title: "News3",
+    content:
+      "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    date: "2024.4.1",
+    category: "",
+    img: "",
+  },
+  {
+    index: 4,
+    title: "News4",
+    content:
+      "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    date: "2024.5.1",
+    category: "",
+    img: "",
+  },
+  {
+    index: 5,
+    title: "News5",
+    content:
+      "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    date: "2024.6.1",
+    category: "",
+    img: "",
   },
 ];

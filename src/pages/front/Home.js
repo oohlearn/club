@@ -3,48 +3,14 @@ import styled from "styled-components";
 import React, { useEffect, useState } from "react";
 import { Button, List, Skeleton, Col, Flex, Row } from "antd";
 import { Link } from "react-router-dom";
+import { newsData } from "../../textFile";
 
 const StyleLink = styled(Link)`
   text-decoration: none;
 `;
-const newsData = [
-  {
-    index: 1,
-    title: "News1",
-    content:
-      "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    date: "2024.2.1",
-  },
-  {
-    index: 2,
-    title: "News2",
-    content:
-      "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    date: "2024.3.1",
-  },
-  {
-    index: 3,
-    title: "News3",
-    content:
-      "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    date: "2024.4.1",
-  },
-  {
-    index: 4,
-    title: "News4",
-    content:
-      "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    date: "2024.5.1",
-  },
-  {
-    index: 5,
-    title: "News5",
-    content:
-      "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    date: "2024.6.1",
-  },
-];
+
 function Home() {
+  console.log(newsData[0]);
   // 渲染API抓回的資料，目前用不到
   const [initLoading, setInitLoading] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -99,7 +65,7 @@ function Home() {
   return (
     <>
       <Col>
-        <MainArticle />
+        <MainArticle latestNews={newsData[0]} />
       </Col>
       <br />
       <List

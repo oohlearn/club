@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Col, ConfigProvider, Row } from "antd";
 import styled from "styled-components";
-import TitleComponent from "../../components/TitleComponent";
 import { albumsData } from "../../textFile";
 
 const StyleLink = styled(Link)`

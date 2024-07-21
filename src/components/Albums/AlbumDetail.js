@@ -1,4 +1,8 @@
-import { Image } from "antd";
+import { Image, Row } from "antd";
+import TitleComponent from "../TitleComponent";
+import { albumsData } from "../../textFile";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
 
 const Album = () => (
   <Image.PreviewGroup
@@ -16,6 +20,18 @@ const Album = () => (
 );
 
 function AlbumDetail() {
-  return <Album />;
+  const location = useLocation();
+  const pathSnippets = location.pathname.split("/").filter((i) => i);
+  const albumIndex = pathSnippets[1] - 1;
+  const albumData = albumsData[albumIndex];
+  const [dataSource, setDataSource] = useState(albumData.images);
+  return (
+    <>
+      <Row style={{ textAlign: "center", justifyContent: "center" }}>
+        <TitleComponent label={`| ${albumData.title} |`} />
+      </Row>
+      <Album />
+    </>
+  );
 }
 export default AlbumDetail;
