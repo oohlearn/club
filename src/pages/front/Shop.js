@@ -92,9 +92,7 @@ function Shop() {
         <SearchBar />
       </Row>
       <br />
-      <Row>
-        <ShopComponent />
-      </Row>
+      <ShopComponent />
 
       <StylePagination>
         <PaginationComponent />
