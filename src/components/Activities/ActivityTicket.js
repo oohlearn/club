@@ -1,6 +1,5 @@
 import { Col, Row, Space, Divider, Table, Button, Select, Checkbox } from "antd";
 import { QuestionCircleTwoTone } from "@ant-design/icons";
-
 import TitleComponent from "../TitleComponent";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -124,7 +123,6 @@ const ProgramTable = ({ programData }) => {
       title: "",
       dataIndex: "title",
       key: "title",
-      render: (text) => <a>{text}</a>,
     },
     {
       title: "",
@@ -140,6 +138,7 @@ const ProgramTable = ({ programData }) => {
       size="small"
       showHeader={false}
       bordered={true}
+      style={{ maxWidth: "300px" }}
     />
   );
 };
@@ -202,7 +201,7 @@ function ActivityTicket() {
           <Divider orientation="left" orientationMargin={0}>
             <strong>演出曲目</strong>
           </Divider>
-          <Col span={12}>
+          <Col>
             <ProgramTable programData={activityData.program} />
           </Col>
         </Col>

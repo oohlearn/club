@@ -67,7 +67,7 @@ function Sidebar() {
       style={{
         background: colorBgContainer,
       }}
-      width={200}
+      width={160}
     >
       <Menu
         mode="inline"

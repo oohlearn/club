@@ -41,10 +41,10 @@ const productsData = {
   歷年演出相關: ["DVD", "CD", "節目單"],
   其他: ["保溫杯", "馬克杯", "帆布包"],
 };
-const provinceData = ["服裝、配件", "文具", "歷年演出相關", "其他"];
+const categoryData = ["服裝、配件", "文具", "歷年演出相關", "其他"];
 const CategorySearchBar = () => {
-  const [cities, setCities] = useState(productsData[provinceData[0]]);
-  const [secondCity, setSecondCity] = useState(productsData[provinceData[0]][0]);
+  const [cities, setCities] = useState(productsData[categoryData[0]]);
+  const [secondCity, setSecondCity] = useState(productsData[categoryData[0]][0]);
   const handleProvinceChange = (value) => {
     setCities(productsData[value]);
     setSecondCity(productsData[value][0]);
@@ -55,12 +55,12 @@ const CategorySearchBar = () => {
   return (
     <Space wrap>
       <Select
-        defaultValue={provinceData[0]}
+        defaultValue={categoryData[0]}
         style={{
           width: 180,
         }}
         onChange={handleProvinceChange}
-        options={provinceData.map((province) => ({
+        options={categoryData.map((province) => ({
           label: province,
           value: province,
         }))}
