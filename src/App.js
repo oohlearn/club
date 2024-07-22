@@ -13,6 +13,7 @@ import Albums from "./pages/front/Albums";
 import AlbumDetail from "./components/Albums/AlbumDetail";
 import News from "./pages/front/News";
 import NewsDetail from "./components/News/NewsDetail";
+import Contact from "./pages/front/Contact";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="albums/:albumId" element={<AlbumDetail />}></Route>
           <Route path="news" element={<News />}></Route>
           <Route path="news/:newsId" element={<NewsDetail />}></Route>
+          <Route path="contact" element={<Contact />}></Route>
         </Route>
       </Routes>
     </div>

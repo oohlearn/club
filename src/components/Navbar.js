@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import IndexStory from "./IndexStory";
 
 import { ShopOutlined, PhoneOutlined, StarOutlined } from "@ant-design/icons";
 import { Menu, Layout } from "antd";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+
 const { Header } = Layout;
+const NavbarStyle = styled.div`
+  NavLink {
+    text-decoration: none;
+  }
+`;
 
 function Navbar() {
   const [current, setCurrent] = useState("mail");
@@ -23,35 +30,41 @@ function Navbar() {
       icon: <StarOutlined />,
     },
     {
-      label: "聯絡我們",
+      label: (
+        <NavLink to="contact" style={{ textDecoration: "none" }}>
+          聯絡我們
+        </NavLink>
+      ),
       key: "chat",
       icon: <PhoneOutlined />,
     },
   ];
 
   return (
-    <Header
-      theme="light"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: "#f5f5f5",
-      }}
-    >
-      <a href={"/"}>
-        <img src="/images/logo.jpg" alt="" width="70px" />
-      </a>
-      <Menu
-        mode="horizontal"
-        defaultSelectedKeys={["2"]}
-        items={items}
+    <NavbarStyle>
+      <Header
+        theme="light"
         style={{
-          flex: 1,
-          minWidth: 0,
-          justifyContent: "flex-end",
+          display: "flex",
+          alignItems: "center",
+          backgroundColor: "#f5f5f5",
         }}
-      />
-    </Header>
+      >
+        <a href={"/"}>
+          <img src="/images/logo.jpg" alt="" width="70px" />
+        </a>
+        <Menu
+          mode="horizontal"
+          defaultSelectedKeys={["2"]}
+          items={items}
+          style={{
+            flex: 1,
+            minWidth: 0,
+            justifyContent: "flex-end",
+          }}
+        />
+      </Header>
+    </NavbarStyle>
   );
 }
 export default Navbar;

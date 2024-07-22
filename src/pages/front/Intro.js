@@ -24,7 +24,7 @@ const introMenu = [
   {
     key: "1",
     label: (
-      <NavLink to="" style={{ textDecoration: "none" }}>
+      <NavLink to="intro" style={{ textDecoration: "none" }}>
         關於我們
       </NavLink>
     ),
