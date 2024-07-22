@@ -20,7 +20,11 @@ function Navbar() {
   };
   const items = [
     {
-      label: "周邊商城",
+      label: (
+        <NavLink to="shop" style={{ textDecoration: "none" }}>
+          周邊商品
+        </NavLink>
+      ),
       key: "mail",
       icon: <ShopOutlined />,
     },
