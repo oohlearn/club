@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Card, Col, ConfigProvider, Row, Select, Space, Flex, Divider, Button } from "antd";
 import styled from "styled-components";
-import { albumsData } from "../../textFile";
-
+import { productsData2 } from "../../textFile";
 const StyleLink = styled(Link)`
   text-decoration: none;
 `;
@@ -12,12 +11,13 @@ const { Meta } = Card;
 const selectOptions = Array.from({ length: 11 }, (_, i) => ({ value: i, label: i }));
 
 function ProductComponent() {
+  console.log(productsData2);
   return (
     <>
-      <Row justify={"space-evenly"}>
-        {albumsData.map((album) => (
-          <Col key={album.index}>
-            <StyleLink to={`/shop/${album.index}`}>
+      <Row justify={"start"}>
+        {productsData2.map((product) => (
+          <Col key={product.index}>
+            <StyleLink to={`/shop/${product.index}`}>
               <ConfigProvider
                 theme={{
                   token: {
@@ -29,19 +29,31 @@ function ProductComponent() {
                 <Card
                   hoverable
                   style={{
-                    width: 100,
-                    height: "auto",
-                    padding: 2,
+                    width: 110,
+                    padding: 5,
                   }}
-                  cover={<img alt="example" src={album.indexImg} />}
+                  cover={
+                    <img
+                      alt="example"
+                      src={product.img}
+                      style={{
+                        width: 100,
+                        height: 100,
+                        objectFit: "contain",
+                      }}
+                    />
+                  }
                 >
                   <Meta
-                    title={album.title}
+                    title={product.title}
                     style={{
-                      textAlign: "center",
+                      textAlign: "start",
                     }}
                   />
-                  <Meta description={album.date} style={{ textAlign: "end" }} />
+                  <Meta description={`NT$${product.price}`} />
+                  <Button type="default" style={{ borderRadius: "5px", paddingTop: "2px" }}>
+                    加入購物車
+                  </Button>
                 </Card>
               </ConfigProvider>
             </StyleLink>
@@ -53,7 +65,7 @@ function ProductComponent() {
 }
 
 const ShoppingListComponent = () => (
-  <Flex align="center" justify="space-between">
+  <Flex align="center" gap="middle" justify="center">
     <Col span={1}>
       <a href="#" style={{ textDecoration: "none" }}>
         X
@@ -123,9 +135,10 @@ function ShopComponent() {
         <Col span={10}>
           <ShoppingList />
           <Flex justify="end" gap="large">
-            <Button type="default">購票</Button>
-
-            <Button type="primary">結帳</Button>
+            <Link to="/activities">
+              <Button type="default">要購票嗎？</Button>
+            </Link>
+            <Button type="primary">結帳囉！</Button>
           </Flex>
         </Col>
       </Flex>

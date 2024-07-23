@@ -15,6 +15,7 @@ import News from "./pages/front/News";
 import NewsDetail from "./components/News/NewsDetail";
 import Contact from "./pages/front/Contact";
 import Shop from "./pages/front/Shop";
+import ChooseSeats from "./pages/front/ChooseSeats";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           </Route>
           <Route path="activities" element={<Activities />}></Route>
           <Route path="activities/:activityId" element={<ActivityTicket />}></Route>
+          <Route path="activities/:activityId/choose_seats" element={<ChooseSeats />}></Route>
           <Route path="videos" element={<Videos />}></Route>
           <Route path="albums" element={<Albums />}></Route>
           <Route path="albums/:albumId" element={<AlbumDetail />}></Route>

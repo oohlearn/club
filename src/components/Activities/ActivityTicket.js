@@ -5,6 +5,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PolicyModal from "../PolicyModal";
 import { activitiesData } from "../../textFile";
+import { Link } from "react-router-dom";
 
 const onChange = (e) => {
   console.log(`checked = ${e.target.checked}`);
@@ -83,9 +84,11 @@ const TicketTable = ({ dataSource, handleTicketChange, resetTicketCounts }) => {
           <Button type="default" block style={{ background: "pink" }} disabled>
             自行選位
           </Button>
-          <Button type="default" block style={{ background: "orange" }}>
-            電腦配位
-          </Button>
+          <Link to="choose_seats">
+            <Button type="default" block style={{ background: "orange" }}>
+              電腦配位
+            </Button>
+          </Link>
         </Space>
       ),
     },

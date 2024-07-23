@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row, Col } from "antd";
+import { Row, Col, Button, Flex } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 import { activitiesData } from "../../textFile";
@@ -46,6 +46,9 @@ function ActivityComponent() {
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta nemo consequuntur
                   facere eaque laudantium? Numquam, sdam.
                 </p>
+                <Flex justify="end">
+                  <Button type="primary">購票去</Button>
+                </Flex>
               </Col>
             </Row>
             <br />
