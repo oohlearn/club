@@ -1,22 +1,14 @@
 import styled from "styled-components";
 import TitleComponent from "../../components/TitleComponent";
-import PaginationComponent from "../../components/Pagenation";
 import React, { useState } from "react";
-import { Input, Space, Button, Col, Row, Select, Steps, message, theme } from "antd";
+import { Button, Col, Row, Select, Steps, message, theme } from "antd";
 import ShopComponent from "../../components/Shop/ShopComponent";
-
-const StepFirst = () => {
-  return (
-    <div>
-      <h1>Hello</h1>;
-    </div>
-  );
-};
+import { FirstStep } from "../../components/Order/FirstStep";
 
 const steps = [
   {
     title: "確認座位及張數",
-    content: <StepFirst />,
+    content: <FirstStep />,
   },
   {
     title: "確認訂單內容",
@@ -27,6 +19,7 @@ const steps = [
     content: "Second-content",
   },
 ];
+
 const StepsComponent = () => {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
@@ -41,8 +34,6 @@ const StepsComponent = () => {
     title: item.title,
   }));
   const contentStyle = {
-    lineHeight: "260px",
-    textAlign: "center",
     color: token.colorTextTertiary,
     backgroundColor: token.colorFillAlter,
     borderRadius: token.borderRadiusLG,
@@ -55,8 +46,8 @@ const StepsComponent = () => {
       <div style={contentStyle}>{steps[current].content}</div>
       <div
         style={{
-          marginTop: 24,
-          justifyContent: "end",
+          marginTop: 45,
+          justifyContent: "center",
           display: "flex",
         }}
       >
@@ -89,12 +80,8 @@ const StepsComponent = () => {
 function ChooseSeats() {
   return (
     <>
-      <TitleComponent label="2024巡迴公演-台北場" />
-
-      <br />
       <StepsComponent />
       <br />
-      <ShopComponent />
     </>
   );
 }

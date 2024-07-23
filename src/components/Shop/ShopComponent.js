@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Col, ConfigProvider, Row, Select, Space, Flex, Divider, Button } from "antd";
 import styled from "styled-components";
@@ -11,7 +11,6 @@ const { Meta } = Card;
 const selectOptions = Array.from({ length: 11 }, (_, i) => ({ value: i, label: i }));
 
 function ProductComponent() {
-  console.log(productsData2);
   return (
     <>
       <Row justify={"start"}>
