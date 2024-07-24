@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import TitleComponent from "../../components/TitleComponent";
 import React, { useState } from "react";
-import { Col, Row, Card, Divider, Space, Flex } from "antd";
+import { Col, Row, Card, Divider, Space, Flex, Button } from "antd";
 import SeatsImage from "./SeatsImage";
+import { Link } from "react-router-dom";
 
 const TicketList = () => (
   <Card
@@ -32,7 +33,7 @@ export const FirstStep = () => {
     <div>
       <TitleComponent label="2024巡迴公演-台北場" />
       <Row align={"top"} gutter={15} justify={"start"}>
-        <img src="/images/poster.jpg" alt="" style={{ width: "80px" }} />
+        <img src="/images/poster.jpg" alt="" style={{ width: "80px", marginLeft: "10px" }} />
         <Col push={1}>
           <Col>
             <h6>時間：2024.7.1（一）</h6>
@@ -54,10 +55,17 @@ export const FirstStep = () => {
 
       <Row align="center" gutter={100}>
         <Col span={12}>
-          <SeatsImage />
+          <SeatsImage style={{ marginLeft: "10px" }} />
         </Col>
         <Col span={12}>
           <TicketList />
+          <br />
+          <Flex vertical gap={"middle"}>
+            <Button type="primary">確認訂單</Button>
+            <Button type="default">
+              <Link style={{ textDecoration: "none" }}>更改票價及數量</Link>
+            </Button>
+          </Flex>
         </Col>
       </Row>
     </div>

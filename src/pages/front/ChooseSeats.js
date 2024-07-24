@@ -4,7 +4,10 @@ import React, { useState } from "react";
 import { Button, Col, Row, Select, Steps, message, theme } from "antd";
 import ShopComponent from "../../components/Shop/ShopComponent";
 import { FirstStep } from "../../components/Order/FirstStep";
+import { SecondStep } from "../../components/Order/SecondStep";
+import { ThirdStep } from "../../components/Order/ThirdStep";
 
+const current = 0;
 const steps = [
   {
     title: "確認座位及張數",
@@ -12,11 +15,11 @@ const steps = [
   },
   {
     title: "確認訂單內容",
-    content: "Second-content",
+    content: <SecondStep />,
   },
   {
     title: "填寫訂購人資料及繳費",
-    content: "Second-content",
+    content: <ThirdStep />,
   },
 ];
 
@@ -80,7 +83,7 @@ const StepsComponent = () => {
 function ChooseSeats() {
   return (
     <>
-      <StepsComponent />
+      <StepsComponent current={current} />
       <br />
     </>
   );

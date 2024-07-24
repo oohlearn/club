@@ -43,14 +43,14 @@ const productsData = {
 };
 const categoryData = ["服裝、配件", "文具", "歷年演出相關", "其他"];
 const CategorySearchBar = () => {
-  const [cities, setCities] = useState(productsData[categoryData[0]]);
-  const [secondCity, setSecondCity] = useState(productsData[categoryData[0]][0]);
+  const [category, setCategory] = useState(productsData[categoryData[0]]);
+  const [product, setProduct] = useState(productsData[categoryData[0]][0]);
   const handleProvinceChange = (value) => {
-    setCities(productsData[value]);
-    setSecondCity(productsData[value][0]);
+    setCategory(productsData[value]);
+    setProduct(productsData[value][0]);
   };
   const onSecondCityChange = (value) => {
-    setSecondCity(value);
+    setProduct(value);
   };
   return (
     <Space wrap>
@@ -69,9 +69,9 @@ const CategorySearchBar = () => {
         style={{
           width: 180,
         }}
-        value={secondCity}
+        value={product}
         onChange={onSecondCityChange}
-        options={cities.map((city) => ({
+        options={category.map((city) => ({
           label: city,
           value: city,
         }))}

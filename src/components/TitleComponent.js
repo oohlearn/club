@@ -10,9 +10,8 @@ function TitleComponent({ label }) {
   return (
     <StyledRow>
       <Col>
-        <Divider>
-          <h2>{label}</h2>
-        </Divider>
+        <h2>{label}</h2>
+        <Divider />
       </Col>
     </StyledRow>
   );
