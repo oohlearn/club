@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import TitleComponent from "../../components/TitleComponent";
+import TitleComponent from "../TitleComponent";
 import React, { useState } from "react";
 import { Col, Row, Card, Divider, Space, Flex, Button } from "antd";
-import SeatsImage from "./SeatsImage";
+import SeatsImage from "../SeatsImage";
 import { Link } from "react-router-dom";
 
 const TicketList = () => (

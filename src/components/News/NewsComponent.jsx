@@ -1,5 +1,5 @@
-import ArticleCard from "../../components/ArticleCard";
-import MainArticle from "../../components/MainArticle";
+import ArticleCard from "../ArticleCard";
+import MainArticle from "../MainArticle";
 
 import React, { useEffect, useState } from "react";
 import { Button, List, Skeleton, Col, Flex, Row } from "antd";

@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import PolicyModal from "../PolicyModal";
 import { activitiesData } from "../../textFile";
 import { Link } from "react-router-dom";
+import SeatsImage from "../SeatsImage";
 
 const onChange = (e) => {
   console.log(`checked = ${e.target.checked}`);
@@ -231,7 +232,11 @@ function ActivityTicket() {
           handleTicketChange={handleTicketChange}
           resetTicketCounts={resetTicketCounts}
         />
+        <Col style={{ marginTop: "48px" }}>
+          <SeatsImage />
+        </Col>
       </Row>
+      <br />
     </>
   );
 }

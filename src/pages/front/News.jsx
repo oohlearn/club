@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, List, Skeleton, Col, Flex, Row, Space } from "antd";
+import { Space } from "antd";
 import NewsComponent from "../../components/News/NewsComponent";
 import SearchBar from "../../components/SearchBar";
 import TitleComponent from "../../components/TitleComponent";

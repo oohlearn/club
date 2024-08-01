@@ -26,7 +26,12 @@ const SeatsImage = () => {
             onClick={onZoomOut}
             src="/images/zoom_out_v2.png"
             alt=""
-            style={{ width: "30px", height: "auto", cursor: "pointer" }}
+            style={{
+              width: "30px",
+              height: "auto",
+              cursor: "pointer",
+              marginRight: scale > 1.5 ? "50px" : "10px",
+            }}
             hidden={scale === 1}
           />
           <img

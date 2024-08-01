@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form, Input, Row, Select, Col, Flex, Divider } from "antd";
-import TitleComponent from "../../components/TitleComponent";
+import TitleComponent from "../TitleComponent";
 import styled from "styled-components";
 import AddressSelect from "./Address";
 // const layout = {
