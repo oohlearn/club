@@ -29,11 +29,11 @@ const VideoModal = ({ video }) => (
           width="960"
           height="540"
           src={video.embed_url}
-          title="YouTube video player"
+          title={video.title}
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen={true}
+          allowfullscreen
         ></iframe>
       ),
       toolbarRender: () => null,

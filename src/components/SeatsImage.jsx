@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Flex, Image } from "antd";
 
-const SeatsImage = () => {
+const SeatsImage = ({ stageImage }) => {
   const [scale, setScale] = useState(1);
 
   const onZoomIn = () => setScale((prev) => Math.min(prev + 0.1, 5));
@@ -13,7 +13,7 @@ const SeatsImage = () => {
   return (
     <Flex>
       <div style={{ position: "relative", width: "350px", margin: "0 auto" }}>
-        <Image width={350} src="/images/stage.png" style={imageStyles} preview={false} />
+        <Image width={350} src={stageImage} style={imageStyles} preview={false} />
         <div
           style={{
             position: "absolute",

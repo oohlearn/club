@@ -150,6 +150,7 @@ export const activitiesData = [
     date: "2024.7.28 (日)",
     place: "台北生技園區多功能廳",
     price: "200/300/500",
+    stageImage: "/images/stage.png",
     description: "",
     program: [
       {
@@ -922,4 +923,15 @@ export const cityData = [
   "臺東縣",
   "花蓮縣",
   "澎湖縣",
+];
+
+export const orderList = [
+  {
+    name: "test1",
+    phone: "123456778",
+    email: "123@123",
+    ticket: { NT$200: 2 },
+    product: [],
+    totalPrice: 400,
+  },
 ];

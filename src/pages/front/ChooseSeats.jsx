@@ -1,29 +1,31 @@
 import styled from "styled-components";
 import TitleComponent from "../../components/TitleComponent";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button, Col, Row, Select, Steps, message, theme } from "antd";
 import ShopComponent from "../../components/Shop/ShopComponent";
 import { FirstStep } from "../../components/Order/FirstStep";
 import { SecondStep } from "../../components/Order/SecondStep";
 import { ThirdStep } from "../../components/Order/ThirdStep";
+import { activitiesData } from "../../textFile";
 
 const current = 0;
-const steps = [
-  {
-    title: "確認座位及張數",
-    content: <FirstStep />,
-  },
-  {
-    title: "確認訂單內容",
-    content: <SecondStep />,
-  },
-  {
-    title: "填寫訂購人資料及繳費",
-    content: <ThirdStep />,
-  },
-];
 
-const StepsComponent = () => {
+const StepsComponent = ({ activityData, newOrder }) => {
+  const steps = [
+    {
+      title: "確認座位及張數",
+      content: <FirstStep activityData={activityData} newOrder={newOrder} />,
+    },
+    {
+      title: "確認訂單內容",
+      content: <SecondStep activityData={activityData} newOrder={newOrder} />,
+    },
+    {
+      title: "填寫訂購人資料及繳費",
+      content: <ThirdStep activityData={activityData} newOrder={newOrder} />,
+    },
+  ];
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
   const next = () => {
@@ -45,7 +47,7 @@ const StepsComponent = () => {
   };
   return (
     <>
-      <Steps current={current} items={items} />
+      <Steps current={current} items={items} activityData={activityData} newOrder={newOrder} />
       <div style={contentStyle}>{steps[current].content}</div>
       <div
         style={{
@@ -81,9 +83,21 @@ const StepsComponent = () => {
 };
 
 function ChooseSeats() {
+  const { activityId } = useParams();
+  const navigate = useNavigate();
+  const activityIndex = parseInt(activityId) - 1;
+  const activityData = activitiesData[activityIndex];
+
+  // 检查 activityData 是否存在
+  if (!activityData) {
+    // 如果活动不存在，可以重定向到一个错误页面或者首页
+    navigate("/");
+    return null;
+  }
+
   return (
     <>
-      <StepsComponent current={current} />
+      <StepsComponent current={current} activityData={activityData} />
       <br />
     </>
   );

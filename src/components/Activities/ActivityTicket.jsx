@@ -152,6 +152,14 @@ function ActivityTicket() {
   const activityIndex = pathSnippets[1] - 1;
   const activityData = activitiesData[activityIndex];
   const [dataSource, setDataSource] = useState(activityData.ticket);
+  const [newOrder, setNewOrder] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    ticket: {},
+    product: [],
+  });
+  const [orderList, setOrderList] = useState([]);
 
   const handleTicketChange = (key, value) => {
     setDataSource((prevData) => {
@@ -233,7 +241,7 @@ function ActivityTicket() {
           resetTicketCounts={resetTicketCounts}
         />
         <Col style={{ marginTop: "48px" }}>
-          <SeatsImage />
+          <SeatsImage stageImage={activityData.stageImage} />
         </Col>
       </Row>
       <br />

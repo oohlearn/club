@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Form, Input, Row, Select, Col, Flex, Divider } from "antd";
+import React, { useState } from "react";
+import { Button, Form, Input, Row, Select, Col, Flex, Divider, Radio, Space } from "antd";
 import TitleComponent from "../TitleComponent";
 import styled from "styled-components";
 import AddressSelect from "./Address";
@@ -28,6 +28,85 @@ const validateMessages = {
 const onFinish = (values) => {
   console.log(values);
 };
+
+const PaidStyle = styled.div`
+  width: 400px;
+  background-color: aqua;
+  height: 220px;
+  border: gray 20px;
+  padding: 20px;
+  margin-top: 5px;
+  text-align: center;
+  align-items: center;
+`;
+
+const PaidMethod = () => {
+  const [value, setValue] = useState(1);
+  const onChange = (e) => {
+    console.log("radio checked", e.target.value);
+    setValue(e.target.value);
+  };
+  return (
+    <>
+      <Form>
+        <Radio.Group onChange={onChange} value={value}>
+          <Space direction="vertical">
+            <Radio value="ATM">ATM虛擬帳號</Radio>
+            <Radio value="creditCard">信用卡</Radio>
+          </Space>
+        </Radio.Group>
+        {value === "creditCard" && (
+          <PaidStyle id="cardInfo">
+            <Form.Item
+              label=<h6>信用卡卡號</h6>
+              name="name"
+              wrapperCol={{ span: 50 }}
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label=<h6>有效期限</h6>
+              name="name"
+              wrapperCol={{ span: 10 }}
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label=<h6>驗證碼</h6>
+              name="name"
+              wrapperCol={{ span: 20 }}
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Row>
+                <Col span={6}>
+                  <Input />
+                </Col>
+                <Col span={10} offset={1}>
+                  卡片背面末3碼
+                </Col>
+              </Row>
+            </Form.Item>
+          </PaidStyle>
+        )}
+      </Form>
+    </>
+  );
+};
+export default PaidMethod;
 
 const Title = ({ title }) => {
   return (
@@ -157,45 +236,47 @@ export const ThirdStep = () => (
       </Form.Item>
     </Form> */}
     <Title title="聯絡人資料" />
-    <Form>
-      <Form.Item
-        label="訂購人姓名"
-        name="name"
-        wrapperCol={{ span: 10 }}
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="訂購人Email"
-        name="email"
-        wrapperCol={{ span: 10 }}
-        rules={[
-          {
-            type: "email",
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="訂購人手機"
-        name="phone"
-        wrapperCol={{ span: 10 }}
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-    </Form>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <Form>
+        <Form.Item
+          label="訂購人姓名"
+          name="name"
+          wrapperCol={{ span: 50 }}
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="訂購人Email"
+          name="email"
+          wrapperCol={{ span: 50 }}
+          rules={[
+            {
+              type: "email",
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="訂購人手機"
+          name="phone"
+          wrapperCol={{ span: 50 }}
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+      </Form>
+    </div>
     <Title title="取票方式" />
     <Row>
       <h6>電子票券</h6>
@@ -217,9 +298,31 @@ export const ThirdStep = () => (
       >
         <Input />
       </Form.Item>
-      <Form.Item>
+      <Form.Item
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
         <AddressSelect />
       </Form.Item>
+      <Form.Item
+        label="地址"
+        name="address"
+        wrapperCol={{ span: 60 }}
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
     </Form>
+    <Title title="付款方式" />
+    <PaidMethod />
+    <br />
+    <Button type="primary">確認訂單，並繳費NT$200</Button>
   </>
 );

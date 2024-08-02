@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import TitleComponent from "../TitleComponent";
-import React, { useState } from "react";
+import React, { useState, useNavigate } from "react";
 import { Col, Row, Card, Divider, Space, Flex, Button } from "antd";
 import SeatsImage from "../SeatsImage";
 import { Link } from "react-router-dom";
@@ -28,18 +28,18 @@ const TicketList = () => (
     </Row>
   </Card>
 );
-export const FirstStep = () => {
+export const FirstStep = ({ activityData, newOrder }) => {
   return (
     <div>
-      <TitleComponent label="2024巡迴公演-台北場" />
+      <TitleComponent label={activityData.title} />
       <Row align={"top"} gutter={15} justify={"start"}>
         <img src="/images/poster.jpg" alt="" style={{ width: "80px", marginLeft: "10px" }} />
         <Col push={1}>
           <Col>
-            <h6>時間：2024.7.1（一）</h6>
+            <h6>時間：{activityData.date}</h6>
           </Col>
           <Col>
-            <h6>地點：國家音樂廳</h6>
+            <h6>地點：{activityData.place}</h6>
           </Col>
           <Col>
             <h6>選擇票價：200元</h6>
@@ -55,7 +55,7 @@ export const FirstStep = () => {
 
       <Row align="center" gutter={100}>
         <Col span={12}>
-          <SeatsImage style={{ marginLeft: "10px" }} />
+          <SeatsImage style={{ marginLeft: "10px" }} stageImage={activityData.stageImage} />
         </Col>
         <Col span={12}>
           <TicketList />
