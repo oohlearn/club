@@ -1,6 +1,6 @@
-import { Col, Divider, Row, Table, List, Menu, Space } from "antd";
-import React, { useState } from "react";
-import { conductorData, experiencesData, IntroductionText } from "../../textFile";
+import { Col, Row } from "antd";
+import React from "react";
+import { IntroductionText } from "../../textFile";
 
 function IntroHome() {
   return (

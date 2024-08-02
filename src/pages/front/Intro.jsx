@@ -1,15 +1,7 @@
 import TitleComponent from "../../components/TitleComponent";
 import { Row, Menu } from "antd";
 import React, { useState } from "react";
-import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
-
-const StyleIntro = styled.div`
-  img {
-    justify-content: center;
-    display: flex;
-  }
-`;
 
 const IntroMenu = () => {
   const [current, setCurrent] = useState("mail");
@@ -17,14 +9,14 @@ const IntroMenu = () => {
     console.log("click ", e);
     setCurrent(e.key);
   };
-  return <Menu onClick={onClick} mode="horizontal" items={introMenu} selectedKeys={current} />;
+  return <Menu onClick={onClick} mode="horizontal" items={introItems} selectedKeys={current} />;
 };
 
-const introMenu = [
+const introItems = [
   {
     key: "1",
     label: (
-      <NavLink to="intro" style={{ textDecoration: "none" }}>
+      <NavLink to="" style={{ textDecoration: "none" }}>
         關於我們
       </NavLink>
     ),
@@ -45,6 +37,7 @@ const introMenu = [
       </NavLink>
     ),
   },
+
   {
     key: "4",
     label: (
@@ -57,14 +50,14 @@ const introMenu = [
 
 function IntroPage() {
   return (
-    <StyleIntro>
+    <>
       <TitleComponent label="成德國小國樂團" />
       <Row justify={"center"}>
         <IntroMenu mode="horizontal" />
       </Row>
       <br />
       <Outlet />
-    </StyleIntro>
+    </>
   );
 }
 

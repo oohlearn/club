@@ -31,13 +31,11 @@ const onFinish = (values) => {
 
 const PaidStyle = styled.div`
   width: 400px;
-  background-color: aqua;
+  background-color: white;
   height: 220px;
-  border: gray 20px;
+  border: 2px solid gray;
   padding: 20px;
   margin-top: 5px;
-  text-align: center;
-  align-items: center;
 `;
 
 const PaidMethod = () => {
@@ -48,7 +46,7 @@ const PaidMethod = () => {
   };
   return (
     <>
-      <Form>
+      <Form colon={false}>
         <Radio.Group onChange={onChange} value={value}>
           <Space direction="vertical">
             <Radio value="ATM">ATM虛擬帳號</Radio>
@@ -58,7 +56,7 @@ const PaidMethod = () => {
         {value === "creditCard" && (
           <PaidStyle id="cardInfo">
             <Form.Item
-              label=<h6>信用卡卡號</h6>
+              label=<h6>信用卡卡號：</h6>
               name="name"
               wrapperCol={{ span: 50 }}
               rules={[
@@ -70,7 +68,7 @@ const PaidMethod = () => {
               <Input />
             </Form.Item>
             <Form.Item
-              label=<h6>有效期限</h6>
+              label=<h6>有效期限：</h6>
               name="name"
               wrapperCol={{ span: 10 }}
               rules={[
@@ -82,7 +80,7 @@ const PaidMethod = () => {
               <Input />
             </Form.Item>
             <Form.Item
-              label=<h6>驗證碼</h6>
+              label=<h6>驗證碼：</h6>
               name="name"
               wrapperCol={{ span: 20 }}
               rules={[
@@ -91,13 +89,11 @@ const PaidMethod = () => {
                 },
               ]}
             >
-              <Row>
+              <Row align={"middle"}>
                 <Col span={6}>
                   <Input />
                 </Col>
-                <Col span={10} offset={1}>
-                  卡片背面末3碼
-                </Col>
+                <Col offset={1}>卡片背面末3碼</Col>
               </Row>
             </Form.Item>
           </PaidStyle>
