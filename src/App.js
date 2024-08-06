@@ -1,21 +1,22 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/front/Home";
+import Home from "./pages/front/Homepage/Home";
 import FrontLayout from "./pages/front/FontLayout";
-import IntroPage from "./pages/front/Intro";
-import Activities from "./pages/front/Activities";
-import ActivityTicket from "./components/Activities/ActivityTicket";
-import IntroHome from "./components/Intro/IntroHome";
-import ExperiencesPage from "./components/Intro/Experiences";
-import Conductors from "./components/Intro/Conductors";
-import Teachers from "./components/Intro/Teachers";
-import Videos from "./pages/front/Videos";
-import Albums from "./pages/front/Albums";
-import AlbumDetail from "./components/Albums/AlbumDetail";
-import News from "./pages/front/News";
-import NewsDetail from "./components/News/NewsDetail";
+import IntroPage from "./pages/front/Intro/Intro";
+import Activities from "./pages/front/Activities/ActivitiesPage";
+import ActivityTicket from "./pages/front/Activities/ActivityTicket";
+import IntroHome from "./pages/front/Intro/IntroHome";
+import ExperiencesPage from "./pages/front/Intro/Experiences";
+import Conductors from "./pages/front/Intro/Conductors";
+import Teachers from "./pages/front/Intro/Teachers";
+import Videos from "./pages/front/Videos/VideosPage";
+import Albums from "./pages/front/Albums/AlbumsPage";
+import AlbumDetail from "./pages/front/Albums/AlbumDetail";
+import News from "./pages/front/News/News";
+import NewsDetail from "./pages/front/News/NewsDetail";
 import Contact from "./pages/front/Contact";
-import Shop from "./pages/front/Shop";
-import ChooseSeats from "./pages/front/ChooseSeats";
+import Shop from "./pages/front/Shop/ShopPage";
+import ChooseSeats from "./pages/front/Order/ChooseSeats";
+import Checkout from "./pages/front/Shop/Checkout";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           {/* Navbar */}
           <Route path="contact" element={<Contact />}></Route>
           <Route path="shop" element={<Shop />}></Route>
+          <Route path="shop/checkout" element={<Checkout />}></Route>
         </Route>
       </Routes>
     </div>
