@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Row, Col, Image } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import VideoModal from "./VideoModal";
+import axios from "axios";
 import { videosData } from "../../../textFile";
 
 const VideoContainer = styled.div`
@@ -14,6 +15,10 @@ const VideoContainer = styled.div`
   }
   .info {
     margin-top: 20px;
+  }
+  img {
+    width: 300px;
+    height: auto;
   }
 `;
 
@@ -33,6 +38,20 @@ const LinkStyle = styled.a`
 `;
 
 function VideoComponent() {
+  const [videosData, setVideosData] = useState([]);
+
+  const getVideosData = async () => {
+    try {
+      const response = await axios.get("http://127.0.0.1:8000/api/videos/");
+      console.log(response.data);
+      setVideosData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getVideosData();
+  }, []);
   return (
     <VideoContainer>
       {videosData.map((video) => (
@@ -40,7 +59,6 @@ function VideoComponent() {
           <Row gutter={30}>
             <Col span={10}>
               <VideoModal video={video} />
-              {/* <img src={video.img} alt="" /> */}
             </Col>
 
             <Col className="info" span={13} push={1}>

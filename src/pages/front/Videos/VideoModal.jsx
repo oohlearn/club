@@ -38,7 +38,7 @@ const VideoModal = ({ video }) => (
       ),
       toolbarRender: () => null,
     }}
-    src={video.img}
+    src={video.video_img}
   />
 );
 export default VideoModal;
